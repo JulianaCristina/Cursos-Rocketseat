@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function experiencia(anos) {
+        switch (true) {
+            case anos <=1:
+               return ('Iniciante');
+            case anos > 1 && anos <=3:
+                return ('Intermediário');
+            case anos >3 && anos <=6:
+                return ('Avançado');
+            case anos >= 7:
+                return ('Jedi Master');
+            default:
+                console.log("triste");
+        }
+    }
+
+  console.log(experiencia(2));
+
+</script>
+</body>
+</html>
