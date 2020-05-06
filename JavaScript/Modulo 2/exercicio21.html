@@ -14,6 +14,9 @@
 
 <div id="app">
     <button id="criar">Criar Botão</button>
+
+    <input type="text" name="nome">
+    <button onClick="adicionar()">Adicionar</button>
 </div>
 
 <script>
@@ -44,6 +47,23 @@
             color += letters[Math.floor(Math.random() * 16)];
         }
         return color;
+    }
+
+
+    var nomes = ["Diego", "Gabriel", "Lucas","Juliana"];
+
+    for (let nome of nomes){
+        let ul = document.createElement("ul")
+        let li = document.createElement("li")
+        ul.appendChild(li)
+
+        let container = document.querySelector("#app")
+        container.appendChild(ul)
+
+        let conteudo = document.createTextNode(nome)
+
+        li.appendChild(conteudo)
+
     }
 
 
