@@ -15,7 +15,7 @@
 <div id="app">
     <button id="criar">Criar Botão</button>
 
-    <input type="text" name="nome">
+    <input type="text" name="nome" id="nome">
     <button onClick="adicionar()">Adicionar</button>
 </div>
 
@@ -49,22 +49,33 @@
         return color;
     }
 
+    let ul = document.createElement("ul")
+
+    let container = document.querySelector("#app")
+
+    let input = document.getElementById("nome")
 
     var nomes = ["Diego", "Gabriel", "Lucas","Juliana"];
 
-    for (let nome of nomes){
-        let ul = document.createElement("ul")
+
+    for (let nome of nomes) {
+        adicionaItem(nome);
+    }
+
+    function adicionaItem(nome){
         let li = document.createElement("li")
         ul.appendChild(li)
-
-        let container = document.querySelector("#app")
         container.appendChild(ul)
-
         let conteudo = document.createTextNode(nome)
 
         li.appendChild(conteudo)
-
     }
+
+   function adicionar(){
+        adicionaItem(input.value)
+
+       input.value = ""
+   }
 
 
 
