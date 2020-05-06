@@ -20,15 +20,32 @@
 
     let btn = document.querySelector('button#criar')
 
+
     btn.onclick = function (){
         let square = document.createElement("div");
+        square.setAttribute("class", "square1")
         square.style.width = '100px';
         square.style.height = '100px';
         square.style.backgroundColor = '#f00'
 
         let container = document.querySelector("#app")
         container.appendChild(square)
+
+        square.onmouseover = function (){
+            square.style.backgroundColor = getRandomColor();
+        }
     }
+
+
+    function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
 
 
 </script>
