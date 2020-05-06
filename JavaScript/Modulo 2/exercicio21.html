@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado-->
+<!--vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve-->
+<!--aparecer na tela.-->
+
+<div id="app">
+    <button id="criar">Criar Botão</button>
+</div>
+
+<script>
+
+    let btn = document.querySelector('button#criar')
+
+    btn.onclick = function (){
+        let square = document.createElement("div");
+        square.style.width = '100px';
+        square.style.height = '100px';
+        square.style.backgroundColor = '#f00'
+
+        let container = document.querySelector("#app")
+        container.appendChild(square)
+    }
+
+
+</script>
+
+</body>
+</html>
