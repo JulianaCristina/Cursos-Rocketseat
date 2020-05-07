@@ -146,3 +146,20 @@ const usuario1= {
 }
 
 const usuario2 = { ...usuario1, nome:'César'}
+
+
+// template literals
+
+// `${variavel}`
+
+
+//Object short syntax
+
+const nome = 'Juliana'
+const idade = 22
+
+const usuario = {
+    nome,
+    idade,
+    empresa: 'No one'
+}
