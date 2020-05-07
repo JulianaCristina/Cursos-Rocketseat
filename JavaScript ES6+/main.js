@@ -48,3 +48,20 @@ const filter = arr.filter(function (item) {
 const find = arr.find(function (item) {
     return item === 4
 })
+
+// Arrow Function
+
+const arr = [1,2,3,4,5]
+
+const newArr = arr.map((item, index) => {
+    return item + index;
+})
+//quando tem apenas um argumento pode remover os parenteses
+const newArr = arr.map(item => {
+    return item + index;
+})
+//quando apenas retorna algo, pode tirar o return
+const newArr = arr.map(item => item + index)
+
+//para retornar um objeto de forma simplificada, é necessário colocá-lo dentro de ( )
+const teste = () => ({nome: 'Juliana'})
