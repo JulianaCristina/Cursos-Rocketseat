@@ -49,6 +49,7 @@ const find = arr.find(function (item) {
     return item === 4
 })
 
+//__________________________________
 // Arrow Function
 
 const arr = [1,2,3,4,5]
@@ -65,3 +66,12 @@ const newArr = arr.map(item => item + index)
 
 //para retornar um objeto de forma simplificada, é necessário colocá-lo dentro de ( )
 const teste = () => ({nome: 'Juliana'})
+
+
+//__________________________________________________________________
+//valores padrão
+//Os valores padrões evita que a funcção retorne NaN quando algum argumento não é passado.
+const soma = (a = 3, b = 6) => a+b;
+
+console.log(soma(1))
+console.log(soma())
