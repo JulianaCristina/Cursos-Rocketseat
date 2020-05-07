@@ -75,3 +75,27 @@ const soma = (a = 3, b = 6) => a+b;
 
 console.log(soma(1))
 console.log(soma())
+
+//Desestruração;
+
+const usuario = {
+    nome: 'Diego',
+    idade: 23,
+    endereco: {
+        cidade: 'Berlândia',
+        estado: 'MG'
+    }
+}
+//para evitar fazer assim
+const nome = usuario.idade;
+//faz assim
+
+const {nome, idade, endereco:{cidade}} = usuario;
+
+//Também é possível usar a desestruturação em funções;
+
+function mostraNome({nome, idade}) {
+    console.log(nome, idade)
+}
+
+mostraNome(usuario)
