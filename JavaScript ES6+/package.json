@@ -11,6 +11,6 @@
   },
   "scripts": {
     "dev": "babel ./main.js -o ./bundle.js -w",
-    "exercicio1" : "babel ./Modulo1/exercicio1.js -o ./Modulo1/bundle-exec1.js"
+    "exercicio1" : "babel ./Modulo1/exercicio3.js -o ./Modulo1/bundle-exec1.js -w"
   }
 }
