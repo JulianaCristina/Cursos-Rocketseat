@@ -1,34 +1,15 @@
-// import classeUsuario from "./modulo2funcoes";
-// import classeUsuario , {idade as IdadeUsuario} from "./modulo2funcoes"
-//
-// console.log(classeUsuario.info())
-// console.log(IdadeUsuario)
+import axios from 'axios';
 
-//Promisse
-const minhaPromise = () => new Promise((resolve, reject) => {
-    setTimeout(() => { resolve('ok')}, 2000)
-})
+class Api {
+    static async getUserInfo(username){
+        try{
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response)
+        }catch (e) {
+            console.warn("Erro na API")
+        }
 
-minhaPromise().then(response => {
-    console.log(response)
-})
-.catch(err => {
-    
-})
-
-//Async await
-// async function executaPromise() {
-//     const response = await minhaPromise();
-//
-//     console.log(response)
-// }
-//
-// executaPromise()
-
-//convertendo pra arrow fucntion
-
-const executaPromise = async () => {
-    console.log(await minhaPromise())
+    }
 }
 
-executaPromise()
+Api.getUserInfo('JulianaCristina')
