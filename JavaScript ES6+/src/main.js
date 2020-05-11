@@ -15,31 +15,49 @@ class App {
         this.formEL.onsubmit = event => this.addRepository(event)
     }
 
-    async addRepository(event){
+    setLoading(loading = true){
+        if (loading){
+            let loadingEl = document.createElement('span')
+            loadingEl.appendChild(document.createTextNode('Carregando'))
+            loadingEl.setAttribute('id', 'loading')
+
+            this.formEL.appendChild(loadingEl)
+        }else{
+            document.getElementById('loading').remove()
+        }
+    }
+
+    async addRepository(event) {
         event.preventDefault();
 
         const repoInput = this.inputEl.value;
 
-        if (repoInput.length === 0) return ;
+        if (repoInput.length === 0) return;
 
-        const response = await api.get(`/repos/${repoInput}`)
+        this.setLoading();
+        try {
+            const response = await api.get(`/repos/${repoInput}`)
 
-        const  {name, description, html_url} = response.data
+            const {name, description, html_url} = response.data
 
-        this.repositories.push({
-            name,
-            description,
-            html_url
-        })
+            this.repositories.push({
+                name,
+                description,
+                html_url
+            })
 
-        this.inputEl.value = '';
-        this.render();
+            this.inputEl.value = '';
+            this.render();
+        }catch (e) {
+            alert('O repositorio não existe')
+        }
+        this.setLoading(false)
     }
 
-    render(){
+    render() {
         this.listEL.innerHTML = '';
 
-        this.repositories.forEach(repo =>{
+        this.repositories.forEach(repo => {
             let titleEL = document.createElement('strong');
             titleEL.appendChild(document.createTextNode(repo.name));
 
