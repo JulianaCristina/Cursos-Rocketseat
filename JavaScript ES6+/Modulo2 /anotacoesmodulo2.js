@@ -3,9 +3,9 @@
 //import quando tenho um default
 
 // import soma, {sub} from'./funcoes';
-import soma from './soma'
-
-console.log(soma(1,2))
+// import soma from './soma'
+//
+// console.log(soma(1,2))
 
 // console.log(sub(1,2))
 
