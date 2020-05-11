@@ -12,9 +12,9 @@ const minhaPromise = () => new Promise((resolve, reject) => {
 minhaPromise().then(response => {
     console.log(response)
 })
-.catch(err => {
-    
-})
+    .catch(err => {
+
+    })
 
 //Async await
 // async function executaPromise() {
