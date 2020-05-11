@@ -163,3 +163,5 @@
 //     idade,
 //     empresa: 'No one'
 // }
+
+// Não é necessário fazer nome: nome, apenas deixar a variavel.
